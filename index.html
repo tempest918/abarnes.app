@@ -9,59 +9,187 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/213048df9a.js" crossorigin="anonymous"></script>
     <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
-<body class="bg-base-100 text-text-primary font-sans">
+<body class="bg-base-100 text-text-primary font-sans overflow-x-hidden">
 
     <header class="bg-base-200/80 backdrop-blur-sm shadow-xl sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-5 flex items-center justify-between">
             <h1 class="text-3xl font-heading font-extrabold text-white">abarnes.app</h1>
-            <ul class="flex space-x-6">
-                <li><a href="#apps" class="text-text-secondary hover:text-white transition duration-300">Apps</a></li>
-                <li><a href="contact.html" class="text-text-secondary hover:text-white transition duration-300">Contact</a></li>
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex items-center space-x-6">
+                <li><a href="#about" class="text-text-secondary hover:text-white transition duration-300">About</a></li>
+                <li><a href="#truck-loads-details" class="text-text-secondary hover:text-white transition duration-300">Apps</a></li>
+                <li><a href="#contact" class="text-text-secondary hover:text-white transition duration-300">Contact</a></li>
             </ul>
+            <!-- Hamburger Icon -->
+            <button id="menu-btn" class="md:hidden hamburger focus:outline-none z-50">
+                <span class="hamburger-top"></span>
+                <span class="hamburger-middle"></span>
+                <span class="hamburger-bottom"></span>
+            </button>
         </nav>
     </header>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-base-100 z-40">
+        <div class="flex flex-col items-center justify-center h-full">
+            <a href="#about" class="text-2xl py-4 text-text-secondary hover:text-white">About</a>
+            <a href="#truck-loads-details" class="text-2xl py-4 text-text-secondary hover:text-white">Apps</a>
+            <a href="#contact" class="text-2xl py-4 text-text-secondary hover:text-white">Contact</a>
+        </div>
+    </div>
 
-    <section class="relative py-32 text-center overflow-hidden">
+    <section class="relative h-screen flex items-center justify-center text-center overflow-hidden">
         <video autoplay loop muted class="video-background">
             <source src="media/coding.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div class="relative z-10 container mx-auto px-6">
+        <div class="relative z-10 container mx-auto px-6" data-aos="fade-in">
             <h2 class="text-5xl sm:text-6xl font-heading font-extrabold leading-tight text-white">Crafting Mobile Experiences with Purpose.</h2>
             <p class="mt-6 text-xl sm:text-2xl text-text-secondary font-sans max-w-3xl mx-auto">From immersive games to essential lifestyle and productivity tools, I create apps that entertain, assist, and empower.</p>
-            <a href="#apps" class="mt-12 inline-block bg-primary text-white font-bold py-4 px-10 rounded-full shadow-lg hover:opacity-90 transition duration-300">Explore My Apps</a>
+            <a href="#about" class="mt-12 inline-block bg-primary text-white font-bold py-4 px-10 rounded-full shadow-lg hover:opacity-90 transition duration-300">Learn More</a>
         </div>
     </section>
 
-    <main id="apps" class="container mx-auto px-6 py-24">
-        <h2 class="text-4xl font-heading font-bold text-center mb-16 text-white">My Apps</h2>
-        <div class="flex flex-wrap justify-center gap-12">
-            <div class="bg-base-200 rounded-2xl shadow-2xl p-8 text-center group transform hover:-translate-y-2 transition-all duration-300 w-full sm:w-2/5 lg:w-1/4">
-                <img src="media/appicon.png" alt="Truck Loads App Icon" class="rounded-full w-28 h-28 mx-auto mb-6 border-4 border-base-300 group-hover:border-secondary transition-colors duration-300">
-                <h3 class="text-2xl font-semibold font-heading text-white">Truck Loads</h3>
-                <p class="text-text-secondary mt-3 font-sans">Manage loads, track expenses, and generate professional invoices for truck drivers.</p>
-                <a href="truck-loads-app.html" class="mt-6 inline-block bg-secondary text-base-100 font-semibold py-3 px-6 rounded-full hover:opacity-90 transition duration-300">Learn More</a>
-            </div>
-            <div class="bg-base-200 rounded-2xl shadow-2xl p-8 text-center group transform hover:-translate-y-2 transition-all duration-300 w-full sm:w-2/5 lg:w-1/4">
-                <img src="media/blackjack-appicon.png" alt="Blackjack App Icon" class="rounded-full w-28 h-28 mx-auto mb-6 border-4 border-base-300 group-hover:border-secondary transition-colors duration-300">
-                <h3 class="text-2xl font-semibold font-heading text-white">Blackjack</h3>
-                <p class="text-text-secondary mt-3 font-sans">A modern, cross-platform implementation of the classic card game Blackjack.</p>
-                <a href="blackjack-app.html" class="mt-6 inline-block bg-secondary text-base-100 font-semibold py-3 px-6 rounded-full hover:opacity-90 transition duration-300">Learn More</a>
+    <main>
+        <section id="about" class="container mx-auto px-6 py-24 text-left md:text-center" data-aos="fade-up">
+            <h2 class="text-4xl font-heading font-bold mb-8 text-white">About Me</h2>
+            <p class="max-w-3xl mx-auto text-text-secondary leading-relaxed">
+                A passionate and experienced mobile app developer specializing in creating intuitive and high-performance applications for iOS and Android. With a strong background in .NET MAUI and a focus on clean architecture, I build apps that not only meet user needs but also provide a seamless and engaging experience. From initial concept to deployment, I am dedicated to crafting quality software that makes a difference.
+            </p>
+        </section>
+
+    </main>
+
+    <h2 class="text-4xl font-heading font-bold text-center pt-24 mb-16 text-white" data-aos="fade-up">My Apps</h2>
+    <section id="truck-loads-details" class="py-24" data-aos="fade-up">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center md:items-start justify-center gap-16">
+                <div class="flex flex-col items-center">
+                    <img src="media/appicon.png" alt="Truck Loads App Icon" class="rounded-3xl w-48 h-48 shadow-2xl border-4 border-base-300">
+                    <h2 class="text-4xl font-heading font-bold mt-8 text-center text-white">Truck Loads</h2>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="bg-gray-500 text-white font-bold py-3 px-6 rounded-lg cursor-not-allowed" title="TBA">
+                            App Store
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.abarnes.driverlogisticsapp" class="bg-primary text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition duration-300">
+                            Google Play
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold font-heading mb-4 text-white">Features</h3>
+                    <ul class="list-disc list-inside space-y-2 text-text-secondary mb-6 font-sans">
+                        <li><strong>Load Management:</strong> Track loads with full CRUD functionality and status workflow.</li>
+                        <li><strong>Expense Tracking:</strong> Log expenses and attach receipt photos.</li>
+                        <li><strong>Reporting & Invoicing:</strong> Generate professional PDF invoices and settlement reports.</li>
+                        <li><strong>Dashboard & KPIs:</strong> View key metrics like Actual Revenue and Net Profit.</li>
+                        <li><strong>Data Management:</strong> Import and export all app data with JSON files.</li>
+                        <li><strong>Security:</strong> Optional PIN lock screen to protect sensitive financial data.</li>
+                    </ul>
+
+                    <h3 class="text-2xl font-semibold font-heading mb-4 text-white">Technology Stack</h3>
+                    <ul class="list-disc list-inside space-y-2 text-text-secondary mb-6 font-sans">
+                        <li><strong>Framework:</strong> .NET MAUI</li>
+                        <li><strong>Language:</strong> C#</li>
+                        <li><strong>Architecture:</strong> Model-View-ViewModel (MVVM)</li>
+                        <li><strong>Database:</strong> Local SQLite database for offline functionality</li>
+                    </ul>
+                    <a href="truck-loads-privacy.html" class="mt-8 inline-block text-secondary hover:underline transition duration-300">View Privacy Policy</a>
+                </div>
             </div>
         </div>
-    </main>
+    </section>
+
+    <section id="blackjack-details" class="py-24" data-aos="fade-up">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center md:items-start justify-center gap-16">
+                <div class="flex flex-col items-center">
+                    <img src="media/blackjack-appicon.png" alt="Blackjack App Icon" class="rounded-3xl w-48 h-48 shadow-2xl border-4 border-base-300">
+                    <h2 class="text-4xl font-heading font-bold mt-8 text-center text-white">Blackjack</h2>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="bg-gray-500 text-white font-bold py-3 px-6 rounded-lg cursor-not-allowed" title="TBA">
+                            App Store
+                        </a>
+                        <a href="#" class="bg-gray-500 text-white font-bold py-3 px-6 rounded-lg cursor-not-allowed" title="TBA">
+                            Google Play
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold font-heading mb-4 text-white">Features</h3>
+                    <ul class="list-disc list-inside space-y-2 text-text-secondary mb-6 font-sans">
+                        <li><strong>Classic Blackjack Gameplay:</strong> Play against the dealer with all the standard actions, including Hit, Stay, Double Down, Split, and Insurance.</li>
+                        <li><strong>Rich User Interface:</strong> A clean, visually appealing interface with smooth card animations.</li>
+                        <li><strong>Sound and Music:</strong> Includes background music and sound effects for an immersive experience.</li>
+                        <li><strong>Configurable Settings:</strong> Adjust decks, felt color, card backs, and audio.</li>
+                        <li><strong>Comprehensive Statistics Tracking:</strong> Track your session stats and view a history of past runs.</li>
+                        <li><strong>Correct Rule Implementation:</strong> Correctly handles complex scenarios.</li>
+                    </ul>
+
+                    <h3 class="text-2xl font-semibold font-heading mb-4 text-white">Technology Stack</h3>
+                    <ul class="list-disc list-inside space-y-2 text-text-secondary mb-6 font-sans">
+                        <li><strong>Framework:</strong> .NET MAUI</li>
+                        <li><strong>Language:</strong> C#</li>
+                        <li><strong>Architecture:</strong> Model-View-ViewModel (MVVM)</li>
+                    </ul>
+                    <a href="blackjack-privacy.html" class="mt-8 inline-block text-secondary hover:underline transition duration-300">View Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container mx-auto px-6 py-24 max-w-2xl text-center" data-aos="fade-up">
+        <h2 class="text-4xl font-heading font-bold mb-8 text-white">Get In Touch</h2>
+        <p class="text-text-secondary leading-relaxed mb-8">Have a question about an app, a business inquiry, or just want to connect? Feel free to reach out!</p>
+
+        <div class="bg-base-200 rounded-2xl shadow-2xl p-8 space-y-6">
+            <div class="flex items-center justify-center space-x-4">
+                <i class="fa-solid fa-envelope fa-2x text-secondary"></i>
+                <a href="mailto:anthony.barnes@abarnes.app" class="text-secondary hover:underline text-lg">anthony.barnes@abarnes.app</a>
+            </div>
+            <div class="flex items-center justify-center space-x-4">
+                <i class="fa-brands fa-linkedin fa-2x text-secondary"></i>
+                <a href="https://www.linkedin.com/in/tonylbarnes/" target="_blank" class="text-secondary hover:underline text-lg">tonylbarnes</a>
+            </div>
+            <div class="flex items-center justify-center space-x-4">
+                <i class="fa-brands fa-github fa-2x text-secondary"></i>
+                <a href="https://github.com/tempest918" target="_blank" class="text-secondary hover:underline text-lg">tempest918</a>
+            </div>
+        </div>
+    </section>
 
     <footer class="bg-base-200 text-text-secondary py-12">
         <div class="container mx-auto px-6 text-center text-sm">
-            <div class="flex justify-center space-x-6 mb-6">
-                <a href="mailto:anthony.barnes@abarnes.app" target="_blank" class="hover:text-white"><i class="fa-solid fa-envelope fa-2x" style="color: white;"></i></a>
-                <a href="https://www.linkedin.com/in/tonylbarnes/" target="_blank" class="hover:text-white"><i class="fa-brands fa-linkedin fa-2x" style="color: white;"></i></a>
-                <a href="https://github.com/tempest918" target="_blank" class="hover:text-white"><i class="fa-brands fa-github fa-2x" style="color: white;"></i></a>
-            </div>
             <p>&copy; 2025 aBarnes Apps LLC. All rights reserved.</p>
         </div>
     </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: false,
+        });
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const body = document.querySelector('body');
+        const menuLinks = document.querySelectorAll('#mobile-menu a');
+
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('open');
+            mobileMenu.classList.toggle('hidden');
+            body.classList.toggle('overflow-hidden');
+        });
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('open');
+                mobileMenu.classList.add('hidden');
+                body.classList.remove('overflow-hidden');
+            });
+        });
+    </script>
 </body>
 </html>
